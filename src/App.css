@@ -27,6 +27,21 @@
 .App-link {
   color: #61dafb;
 }
+body{
+  background: #FFEFDC;
+}
+ul{
+  background: #FFC697;
+  height: 5vh;
+  display: flex;
+  align-items: center;
+  justify-content:center;
+  text-align: center;
+}
+li{
+  flex: 1;
+  color: #272727;
+}
 
 @keyframes App-logo-spin {
   from {
