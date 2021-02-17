@@ -8,8 +8,8 @@ import {
   Link
 } from "react-router-dom";
 import Home from './Home/Home.js';
-import Dashboard from './Dashboard/Dashboard.js';
-import About from './About/About.js';
+import Dashboard from './Rocket/Rocket.js';
+import About from './Launch/Launch.js';
 
 function App() {
   return (
@@ -20,10 +20,10 @@ function App() {
             <Link to="/" className="text-purple-700">Home</Link>
           </li>
           <li>
-            <Link to="/about">About</Link>
+            <Link to="/about">Launchs</Link>
           </li>
           <li>
-            <Link to="/dashboard">Dashboard</Link>
+            <Link to="/dashboard">Rockets</Link>
           </li>
         </ul>
 

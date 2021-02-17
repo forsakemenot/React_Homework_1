@@ -14,15 +14,18 @@ function Home() {
     [],
   );
   return (
-    // <ul>
-    //   {rockets.map((rockets) => (<li>{rockets.country}</li>))}
-    // </ul>
     <>
       {rockets.links &&
         <>
-          <h1>{rockets.links.website}</h1>
+          <p className='text-xl'>The Name of Company : {rockets.name}</p>
+          <p>The name of Founder : {rockets.founder}</p>
+          <p>Since : {rockets.founded}</p>
+          <p>Total Employees : {rockets.employees}</p>
+          <p>Headquarters : {rockets.headquarters.address}, {rockets.headquarters.city}, {rockets.headquarters.state}</p>
+          <p>Website : {rockets.links.website}</p>
         </>
       }
+
     </>
   );
 }
