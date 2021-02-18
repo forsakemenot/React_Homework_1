@@ -23,7 +23,8 @@ function Rockets() {
       {/* เนื้อหาข้างใน */}
             {rockets.map((rocket) => (
               <div className="col-span-3 mx-4 justify-items-center h3/5">
-                      <img className="cursor-pointer object-cover h-48 h-full rounded-lg transition hover:opacity-25" src={rocket.flickr_images}></img>
+                  <img className="cursor-pointer object-cover h-48 h-full rounded-lg transition hover:opacity-25 rocketcard" src={rocket.flickr_images}></img>
+                  <p className="title text-2xl font-bold">{rocket.rocket_name}</p>
               </div>
             ))}
           </div>

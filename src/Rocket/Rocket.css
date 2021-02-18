@@ -3,3 +3,15 @@ div .contents{
     background-color: red;
     margin: 20px;
 }
+.title{
+    display: flex;
+    position: relative;
+    top: -40vh;
+    justify-content: center;
+    opacity: 0;
+    transition: 1s;
+}
+.rocketcard:hover ~ .title{
+    opacity: 1;
+    transition: 1s;
+}
