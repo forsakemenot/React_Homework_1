@@ -19,6 +19,8 @@ function Rockets() {
           <ul>
           <li>{rocket.rocket_name}</li>
           <li>{rocket.rocket_type}</li>
+          <li>{rocket.rocket_mission}</li>
+
           </ul>
 
 

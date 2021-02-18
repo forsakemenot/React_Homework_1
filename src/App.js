@@ -1,4 +1,5 @@
 import logo from './logo.svg';
+import SpaceX from './SpaceX-Logo.svg';
 import './App.css';
 import React from "react";
 import {
@@ -13,20 +14,24 @@ import About from './Launch/Launch.js';
 
 function App() {
   return (
-<Router>
+    <Router>
       <div>
-        <ul>
-          <li>
-            <Link to="/" className="text-purple-700">Home</Link>
-          </li>
-          <li>
-            <Link to="/about">Launchs</Link>
-          </li>
-          <li>
-            <Link to="/dashboard">Rockets</Link>
-          </li>
-        </ul>
-
+        <div className="fixed w-1/6 h-20 flex justify-center items-center flex-grow ml-10">
+          <img src={SpaceX} />
+        </div>
+        <div className="fixed w-full h-20 flex justify-end items-center">
+          <ul className="flex justify-around w-1/6">
+            <li>
+              <Link to="/" className="text-purple-700">Home</Link>
+            </li>
+            <li>
+              <Link to="/about">Launchs</Link>
+            </li>
+            <li>
+              <Link to="/dashboard">Rockets</Link>
+            </li>
+          </ul>
+        </div>
         <hr />
 
         {/*

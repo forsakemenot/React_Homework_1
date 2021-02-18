@@ -28,20 +28,41 @@
   color: #61dafb;
 }
 body{
-  background: #FFEFDC;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  font-family:'Kanit', sans-serif !important;
+  
 }
-ul{
-  background: #FFC697;
-  height: 5vh;
-  display: flex;
-  align-items: center;
-  justify-content:center;
-  text-align: center;
+#home_page{
+  background-image: url(ElonMuskSalary.png);
+  margin-top: -100px;
+  height: 200vh;
+  width: 100vw;
 }
-li{
-  flex: 1;
-  color: #272727;
+#icon_center_page1{
+  position: relative;
+  height: 3.6vw;
+  top: 15vw;
+  left: 3.5vw;
 }
+/*- - - - - home page - - - - -*/
+#text_left_home_page{
+  font-size: 1vw;
+  position: relative;
+  top: 34vw;
+  left: 3.5vw;
+}
+#text_right_home_page{
+  font-size: 1.4vw;
+  position: relative;
+  top: 29vw;
+  left: 72vw;
+}
+#text_right_home_page b{
+  font-size: 1.8vw;
+}
+
 
 @keyframes App-logo-spin {
   from {
