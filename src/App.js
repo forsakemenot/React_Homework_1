@@ -6,35 +6,40 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
+  Link,
+  useLocation
 } from "react-router-dom";
 import Home from './Home/Home.js';
 import Rocket from './Rocket/Rocket.js';
 import Launch from './Launch/Launch.js';
 import RocketDetail from "./RocketDetail/RocketDetail.js"
+import Nav from "./Nav"
+
 
 function App() {
+  //  const {pathname} = useLocation();
+  // const pathname = false;
   return (
     <Router>
       <div>
-        <div className="fixed w-1/6 h-20 flex justify-center items-center flex-grow ml-10">
+        <Nav SpaceX={SpaceX}/>
+        {/* <div className="fixed w-1/6 h-20 flex justify-center items-center flex-grow ml-10">
           <img src={SpaceX} />
         </div>
         <div className="fixed w-full h-20 flex justify-end items-center">
           <ul className="flex justify-around w-1/6">
             <li>
-              <Link to="/" className="text-purple-700">Home</Link>
+              <Link to="/">Home</Link>
             </li>
             <li>
-              <Link to="/Launch">Launchs</Link>
+              <Link to="/Launch" className={`nav ${pathname === "/Launch" && "nav_show"}`}>Launchs</Link>
             </li>
             <li>
               <Link to="/Rocket">Rockets</Link>
             </li>
-            
+
           </ul>
-        </div>
-        <hr />
+        </div> */}
 
         {/*
           A <Switch> looks through all its children <Route>

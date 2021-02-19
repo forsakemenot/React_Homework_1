@@ -30,15 +30,17 @@
 body{
   margin: 0;
   padding: 0;
-  overflow: hidden;
+  /* overflow: hidden; */
   font-family:'Kanit', sans-serif !important;
   
 }
 #home_page{
   background-image: url(ElonMuskSalary.png);
   margin-top: -100px;
-  height: 200vh;
+  height: 120vh;
   width: 100vw;
+  z-index: -1;
+  position: fixed;
 }
 #icon_center_page1{
   position: relative;
@@ -63,7 +65,22 @@ body{
   font-size: 1.8vw;
 }
 
+.box_hover:hover {
+  transform: scale(1.25);
+}
 
+.page_launch{
+  position: relative;
+  top: 11vw;
+}
+.filter_box{
+  position: absolute;
+  top: 7vw;
+}
+.nav_show{
+  background-color: #f5f5f5;
+  z-index: 2;
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
