@@ -9,8 +9,8 @@ import {
   Link
 } from "react-router-dom";
 import Home from './Home/Home.js';
-import Dashboard from './Rocket/Rocket.js';
-import About from './Launch/Launch.js';
+import Rocket from './Rocket/Rocket.js';
+import Launch from './Launch/Launch.js';
 import RocketDetail from "./RocketDetail/RocketDetail.js"
 
 function App() {
@@ -26,10 +26,10 @@ function App() {
               <Link to="/" className="text-purple-700">Home</Link>
             </li>
             <li>
-              <Link to="/about">Launchs</Link>
+              <Link to="/Launch">Launchs</Link>
             </li>
             <li>
-              <Link to="/dashboard">Rockets</Link>
+              <Link to="/Rocket">Rockets</Link>
             </li>
             
           </ul>
@@ -47,11 +47,11 @@ function App() {
           <Route exact path="/">
             <Home />
           </Route>
-          <Route path="/about">
-            <About />
+          <Route path="/Launch">
+            <Launch />
           </Route>
-          <Route path="/dashboard">
-            <Dashboard />
+          <Route path="/Rocket">
+            <Rocket />
           </Route>
           <Route path="/RocketDetail/:rocketId">
             <RocketDetail />
