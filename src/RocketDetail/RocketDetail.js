@@ -18,13 +18,15 @@ function RocketDetail() {
     return (
         <>
             <>
-                <div className="rocket_detail flex h-screen container mx-auto items-center">
-                    <div className="justify-items-center mx-5">
-                        <img src={rockets.flickr_images}></img>
-                    </div>
-                    <div>
-                        <p>{rockets.rocket_name}</p>
-                        <p>{rockets.description}</p>
+                <div className="rocket_detail flex flex h-screen container mx-auto items-center">
+                    <div className="flex flex-col justify-center">
+                        <div className="flex justify-center mb-5">
+                            <img src={rockets.flickr_images}></img>
+                        </div>
+                        <div className="text-center">
+                            <p>{rockets.rocket_name}</p>
+                            <p>{rockets.description}</p>
+                        </div>
                     </div>
                 </div>
                 <div>
