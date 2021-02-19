@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import './Rocket.css';
+import {NavLink,  useRouteMatch} from "react-router-dom"
+
 
 function Rockets() {
   const [rockets, setRockets] = useState([]);
+  let {path,url} = useRouteMatch()
   useEffect(() => {
     const fetchRockets = async () => {
       const reponse = await fetch("https://api.spacexdata.com/v3/rockets")
@@ -14,6 +17,7 @@ function Rockets() {
     [],
   );
   return (
+    
     <>
       <>
       {/* ทั้งก้อน */}
@@ -23,8 +27,10 @@ function Rockets() {
       {/* เนื้อหาข้างใน */}
             {rockets.map((rocket) => (
               <div className="col-span-3 mx-4 justify-items-center h3/5">
-                  <img className="cursor-pointer object-cover h-48 h-full rounded-lg transition hover:opacity-25 rocketcard" src={rocket.flickr_images}></img>
-                  <p className="title text-2xl font-bold">{rocket.rocket_name}</p>
+                <NavLink to={`RocketDetail/${rocket.rocket_id}`}>
+                    <img className="cursor-pointer object-cover h-48 h-full rounded-lg transition hover:opacity-25 rocketcard" src={rocket.flickr_images}></img>
+                    <p className="title text-2xl font-bold">{rocket.rocket_name}</p>
+                  </NavLink>
               </div>
             ))}
           </div>

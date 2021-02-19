@@ -11,6 +11,7 @@ import {
 import Home from './Home/Home.js';
 import Dashboard from './Rocket/Rocket.js';
 import About from './Launch/Launch.js';
+import RocketDetail from "./RocketDetail/RocketDetail.js"
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
             <li>
               <Link to="/dashboard">Rockets</Link>
             </li>
+            
           </ul>
         </div>
         <hr />
@@ -50,6 +52,9 @@ function App() {
           </Route>
           <Route path="/dashboard">
             <Dashboard />
+          </Route>
+          <Route path="/RocketDetail/:rocketId">
+            <RocketDetail />
           </Route>
         </Switch>
       </div>
