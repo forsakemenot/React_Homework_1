@@ -44,10 +44,11 @@ function Launch() {
       <>
         <div className="flex justify-center h-screen">
           {/* จัดตำแหน่ง */}
-          
+          <div className="bg_filter_box w-full h-1/6"></div>
           <div className="filter_box flex w-4/12 justify-around items-center">
-          <span>NAME : </span>
-          <select className="border shadow-md p-2 rounded-md" onChange={handleChangeName} value={name}>
+            
+            <span>NAME : </span>
+            <select className="border shadow-md p-2 rounded-md" onChange={handleChangeName} value={name}>
               <option value="">All</option>
               <option value="Falcon 1">Falcon 1</option>
               <option value="Falcon 9">Falcon 9</option>
