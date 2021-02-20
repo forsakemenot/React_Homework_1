@@ -12,9 +12,7 @@ function Nav({SpaceX}) {
     console.log(pathname);
     return (
         <div>
-            <div className="fixed w-1/6 h-20 flex justify-center items-center flex-grow ml-10">
-                <img src={SpaceX} style={{zIndex:3}}/>
-            </div>
+            
             <div className={`fixed w-full h-20 flex justify-end items-center ${pathname === "/Launch" && "nav_show"}`}>
                 <ul className="flex justify-around w-1/6">
                     <li>
@@ -28,6 +26,9 @@ function Nav({SpaceX}) {
                     </li>
 
                 </ul>
+            </div>
+            <div className="fixed w-1/6 h-20 flex justify-center items-center flex-grow ml-10 logo_spaceX">
+                <img src={SpaceX}/>
             </div>
         </div>
     )

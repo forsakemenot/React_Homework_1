@@ -1,30 +1,37 @@
 import React, { useState, useEffect } from 'react';
 import '.././App.css';
-import {NavLink,  useRouteMatch} from "react-router-dom"
+import { NavLink, useRouteMatch } from "react-router-dom"
 
 function Launch() {
   const [launchs, setLaunchs] = useState([]);
-  const [limit, setLimit] = useState(10);
   const [year, setYear] = useState("");
   const [name, setName] = useState("");
-  const [option, setOption] = useState({year:"",name:""});
+  const [success, setSuccess] = useState("");
+  const [option, setOption] = useState({ year: "", name: "", success: "" });
   const handleChangeYear = (e) => {
     setYear(e.target.value);
     setOption({
       ...option,
-      year:e.target.value
+      year: e.target.value
     });
   }
   const handleChangeName = (e) => {
     setName(e.target.value);
     setOption({
       ...option,
-      name:e.target.value
+      name: e.target.value
+    });
+  }
+  const handleChangeSuccess = (e) => {
+    setSuccess(e.target.value);
+    setOption({
+      ...option,
+      success: e.target.value
     });
   }
   useEffect(() => {
     const fetchLaunchs = async () => {
-      const reponse = await fetch("https://api.spacexdata.com/v3/launches?launch_year=" + option.year + "&rocket_name=" + option.name)
+      const reponse = await fetch("https://api.spacexdata.com/v3/launches?launch_year=" + option.year + "&rocket_name=" + option.name + "&launch_success=" + option.success)
       const data = await reponse.json();
       setLaunchs(data);
     };
@@ -37,37 +44,51 @@ function Launch() {
       <>
         <div className="flex justify-center h-screen">
           {/* จัดตำแหน่ง */}
-          <div className="filter_box flex w-1/6 justify-around">
+          <div className="filter_box flex w-1/5 justify-around">
             <select className="border shadow-md p-2 rounded-md" onChange={handleChangeYear} value={year}>
+              <option value="">All</option>
+              <option value="2006">2006</option>
+              <option value="2007">2007</option>
+              <option value="2008">2008</option>
               <option value="2009">2009</option>
               <option value="2010">2010</option>
-              <option value="2011">2011</option>
               <option value="2012">2012</option>
               <option value="2013">2013</option>
               <option value="2014">2014</option>
-              <option>2005</option>
+              <option value="2015">2015</option>
+              <option value="2016">2016</option>
+              <option value="2017">2017</option>
+              <option value="2018">2018</option>
+              <option value="2019">2019</option>
+              <option value="2020">2020</option>
             </select>
             <select className="border shadow-md p-2 rounded-md" onChange={handleChangeName} value={name}>
+              <option value="">All</option>
               <option value="Falcon 1">Falcon 1</option>
               <option value="Falcon 9">Falcon 9</option>
               <option value="Falcon Heavy">Falcon Heavy</option>
             </select>
-            <select className="border shadow-md p-2 rounded-md">
-              <option>ture</option>
-              <option>false</option>
+            <select className="border shadow-md p-2 rounded-md" onChange={handleChangeSuccess} value={success}>
+              <option value="">All</option>
+              <option value="true">sucess</option>
+              <option value="false">no-sucess</option>
             </select>
           </div>
           <div className="grid grid-cols-12 page_launch cursor-pointer">
             {launchs.map((launch) => (
-              <NavLink to={`LaunchDetail/${launch.flight_number}`}>
               <div className="flex flex-col col-span-4 border rounded-md m-2 p-5 shadow-md transition box_hover bg-white">
-                <span>name : {launch.rocket.rocket_name}</span>
-                <span>type : {launch.rocket.rocket_type}</span>
-                <span>mission : {launch.mission_name}</span>
-                <span>year : {launch.launch_year}</span>
-                <span>date : {launch.launch_date_utc}</span>
+                <NavLink to={`LaunchDetail/${launch.flight_number}`}>
+                  <div>
+                    {/* <img src={launch.link.mission_patch} /> */}
+                  </div>
+                  <div className="flex flex-col">
+                    <span>name : {launch.rocket.rocket_name}</span>
+                    <span>year : {launch.launch_year}</span>
+                    <span>mission : {launch.mission_name}</span>
+                  </div>
+                </NavLink>
               </div>
-              </NavLink>
+
             ))}
           </div>
         </div>
