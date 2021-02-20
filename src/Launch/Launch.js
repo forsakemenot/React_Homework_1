@@ -2,15 +2,33 @@ import React, { useState, useEffect } from 'react';
 import '.././App.css';
 function Launch() {
   const [launchs, setLaunchs] = useState([]);
+  const [limit, setLimit] = useState(10);
+  const [year, setYear] = useState("");
+  const [name, setName] = useState("");
+  const [option, setOption] = useState({year:"",name:""});
+  const handleChangeYear = (e) => {
+    setYear(e.target.value);
+    setOption({
+      ...option,
+      year:e.target.value
+    });
+  }
+  const handleChangeName = (e) => {
+    setName(e.target.value);
+    setOption({
+      ...option,
+      name:e.target.value
+    });
+  }
   useEffect(() => {
     const fetchLaunchs = async () => {
-      const reponse = await fetch("https://api.spacexdata.com/v3/launches")
+      const reponse = await fetch("https://api.spacexdata.com/v3/launches?launch_year=" + option.year + "&rocket_name=" + option.name)
       const data = await reponse.json();
       setLaunchs(data);
     };
     fetchLaunchs();
   },
-    [],
+    [option],
   );
   return (
     <>
@@ -18,23 +36,19 @@ function Launch() {
         <div className="flex justify-center h-screen">
           {/* จัดตำแหน่ง */}
           <div className="filter_box flex w-1/6 justify-around">
-            <select className="border shadow-md p-2 rounded-md">
-              <option>1999</option>
-              <option>2000</option>
-              <option>2001</option>
-              <option>2002</option>
-              <option>2003</option>
-              <option>2004</option>
+            <select className="border shadow-md p-2 rounded-md" onChange={handleChangeYear} value={year}>
+              <option value="2009">2009</option>
+              <option value="2010">2010</option>
+              <option value="2011">2011</option>
+              <option value="2012">2012</option>
+              <option value="2013">2013</option>
+              <option value="2014">2014</option>
               <option>2005</option>
             </select>
-            <select className="border shadow-md p-2 rounded-md">
-              <option>Falcon 1</option>
-              <option>Falcon 2</option>
-              <option>Falcon 3</option>
-              <option>Falcon 4</option>
-              <option>Falcon 5</option>
-              <option>Falcon 6</option>
-              <option>Falcon 7</option>
+            <select className="border shadow-md p-2 rounded-md" onChange={handleChangeName} value={name}>
+              <option value="Falcon 1">Falcon 1</option>
+              <option value="Falcon 9">Falcon 9</option>
+              <option value="Falcon Heavy">Falcon Heavy</option>
             </select>
             <select className="border shadow-md p-2 rounded-md">
               <option>ture</option>
