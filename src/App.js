@@ -13,6 +13,7 @@ import Home from './Home/Home.js';
 import Rocket from './Rocket/Rocket.js';
 import Launch from './Launch/Launch.js';
 import RocketDetail from "./RocketDetail/RocketDetail.js"
+import LaunchDetail from "./LaunchDetail/LaunchDetail.js"
 import Nav from "./Nav"
 
 
@@ -60,6 +61,9 @@ function App() {
           </Route>
           <Route path="/RocketDetail/:rocketId">
             <RocketDetail />
+          </Route>
+          <Route path="/LaunchDetail/:flight_number">
+            <LaunchDetail />
           </Route>
         </Switch>
       </div>
