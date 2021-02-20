@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from "react-router-dom";
 import { useHistory } from "react-router-dom";
+import './LaunchDetail.css'
 
 
 function LaunchDetail() {
@@ -21,22 +22,56 @@ function LaunchDetail() {
         [],
     );
     return (
-        <div>
-        {launchs.links &&
-        <>
-            <>
-                <div className="flex flex-col h-screen container mx-auto items-center justify-center">
-                    <div className="flex mx-auto">
-                        <div>
-                            <img className="w-52 h-52" src={launchs.links.mission_patch}></img>
+        <div className="body_launch w-full">
+            {launchs.links &&
+                <>
+                    <>
+                        <div className="flex h-screen container mx-auto items-center justify-center ">
+                            <div className="flex flex-row justify-center">
+                                <div className="flex justify-center items-center mr-20">
+                                    <img className="justify-center" src={launchs.links.mission_patch_small}></img>
+                                </div>
+                                <div className='flex flex-col justify-center items-center w-6/12'>
+                                    <div className="flex w-full">
+                                        <p className="text-3xl mb-2 uppercase text-left">Mission : {launchs.mission_name}</p>
+                                    </div>
+                                    <div className="flex w-full">
+                                        <div className="bg-blue-500 w-52 rounded-md justify-center flex mb-2">
+                                            <p className="uppercase text-white">
+                                                Rocket Name : {launchs.rocket.rocket_id}
+                                            </p>
+                                        </div>
+                                            {launchs.details
+                                                ? <div className="ml-5 bg-green-500 w-52 rounded-md justify-center flex mb-2"><p className="uppercase text-white">LAUNCH : SUCCESS</p></div>
+                                                : <div className="ml-5 bg-red-500 w-52 rounded-md justify-center flex mb-2"><p className="uppercase text-white">LAUNCH : FAILURE</p></div>
+                                            }
+                                    </div>
+                                    <div className="flex w-full">
+                                        {launchs.details
+                                            ? <p className="text-xl text-left">{launchs.details}</p>
+                                            : <p className="text-xl text-left text-gray-400 blink">- NO ADDITIONAL DESCRIPTION ABOUT THIS MISSION -</p>
+                                        }
+
+                                    </div>
+                                </div>
+
+                            </div>
                         </div>
-                        <p>{launchs.mission_name}</p>
-                    </div>
-                </div>
-            </>
-        </>
-        }
+                    </>
+                </>
+            }
         </div>
     );
 }
 export default LaunchDetail;
+
+{/* <div className="bg-blue-500 w-52 rounded-md justify-center flex mb-2">
+                                            <p>
+                                                THE MISSION : {launchs.mission_name}
+                                            </p>
+                                        </div>
+                                        <div className="bg-blue-500 w-52 rounded-md justify-center flex uppercase ">
+                                            <p>
+                                                Launch : {launchs.launch_success? 'SUCCESS':'FAILURE'}
+                                            </p>
+                                        </div> */}
