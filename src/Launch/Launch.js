@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import '.././App.css';
+import {NavLink,  useRouteMatch} from "react-router-dom"
+
 function Launch() {
   const [launchs, setLaunchs] = useState([]);
   const [limit, setLimit] = useState(10);
@@ -55,15 +57,17 @@ function Launch() {
               <option>false</option>
             </select>
           </div>
-          <div className="grid grid-cols-12 page_launch">
-            {launchs.map((rockets) => (
+          <div className="grid grid-cols-12 page_launch cursor-pointer">
+            {launchs.map((launch) => (
+              <NavLink to={`LaunchDetail/${launch.flight_number}`}>
               <div className="flex flex-col col-span-4 border rounded-md m-2 p-5 shadow-md transition box_hover bg-white">
-                <span>name : {rockets.rocket.rocket_name}</span>
-                <span>type : {rockets.rocket.rocket_type}</span>
-                <span>mission : {rockets.mission_name}</span>
-                <span>year : {rockets.launch_year}</span>
-                <span>date : {rockets.launch_date_utc}</span>
+                <span>name : {launch.rocket.rocket_name}</span>
+                <span>type : {launch.rocket.rocket_type}</span>
+                <span>mission : {launch.mission_name}</span>
+                <span>year : {launch.launch_year}</span>
+                <span>date : {launch.launch_date_utc}</span>
               </div>
+              </NavLink>
             ))}
           </div>
         </div>
