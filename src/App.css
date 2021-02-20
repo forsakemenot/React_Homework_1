@@ -87,6 +87,9 @@ select{
 .logo_spaceX{
   z-index: 3;
 }
+.logo_hidden{
+  display: none;
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

@@ -41,17 +41,17 @@ function LaunchDetail() {
                                                 Rocket Name : {launchs.rocket.rocket_id}
                                             </p>
                                         </div>
-                                            {launchs.details
-                                                ? <div className="ml-5 bg-green-500 w-52 rounded-md justify-center flex mb-2"><p className="uppercase text-white">LAUNCH : SUCCESS</p></div>
-                                                : <div className="ml-5 bg-red-500 w-52 rounded-md justify-center flex mb-2"><p className="uppercase text-white">LAUNCH : FAILURE</p></div>
-                                            }
+                                        {launchs.details
+                                            ? <div className="ml-5 bg-green-500 w-52 rounded-md justify-center flex mb-2"><p className="uppercase text-white">LAUNCH : SUCCESS</p></div>
+                                            : <div className="ml-5 bg-red-500 w-52 rounded-md justify-center flex mb-2"><p className="uppercase text-white">LAUNCH : FAILURE</p></div>
+                                        }
                                     </div>
-                                    <div className="flex w-full">
+                                    <div className="flex w-full flex-col">
                                         {launchs.details
                                             ? <p className="text-xl text-left">{launchs.details}</p>
                                             : <p className="text-xl text-left text-gray-400 blink">- NO ADDITIONAL DESCRIPTION ABOUT THIS MISSION -</p>
                                         }
-
+                                        <div><button onClick={handleClick} class="w-2/12 bg-yellow-400 hover:bg-yellow-300 transition text-white font-bold py-2 px-4 rounded mt-8 back_btn">BACK</button></div>
                                     </div>
                                 </div>
 

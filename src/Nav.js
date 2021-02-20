@@ -9,7 +9,6 @@ import {
 
 function Nav({SpaceX}) {
     const { pathname } = useLocation();
-    console.log(pathname);
     return (
         <div>
             
@@ -28,7 +27,7 @@ function Nav({SpaceX}) {
                 </ul>
             </div>
             <div className="fixed w-1/6 h-20 flex justify-center items-center flex-grow ml-10 logo_spaceX">
-                <img src={SpaceX}/>
+                <img src={SpaceX} className={`${pathname === "/" && "logo_hidden"}`}/>
             </div>
         </div>
     )

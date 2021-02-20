@@ -44,7 +44,16 @@ function Launch() {
       <>
         <div className="flex justify-center h-screen">
           {/* จัดตำแหน่ง */}
-          <div className="filter_box flex w-1/5 justify-around">
+          
+          <div className="filter_box flex w-4/12 justify-around items-center">
+          <span>NAME : </span>
+          <select className="border shadow-md p-2 rounded-md" onChange={handleChangeName} value={name}>
+              <option value="">All</option>
+              <option value="Falcon 1">Falcon 1</option>
+              <option value="Falcon 9">Falcon 9</option>
+              <option value="Falcon Heavy">Falcon Heavy</option>
+            </select>
+            <span>YEAR : </span>
             <select className="border shadow-md p-2 rounded-md" onChange={handleChangeYear} value={year}>
               <option value="">All</option>
               <option value="2006">2006</option>
@@ -62,12 +71,7 @@ function Launch() {
               <option value="2019">2019</option>
               <option value="2020">2020</option>
             </select>
-            <select className="border shadow-md p-2 rounded-md" onChange={handleChangeName} value={name}>
-              <option value="">All</option>
-              <option value="Falcon 1">Falcon 1</option>
-              <option value="Falcon 9">Falcon 9</option>
-              <option value="Falcon Heavy">Falcon Heavy</option>
-            </select>
+            <span>MISSION : </span>
             <select className="border shadow-md p-2 rounded-md" onChange={handleChangeSuccess} value={success}>
               <option value="">All</option>
               <option value="true">sucess</option>
@@ -77,14 +81,14 @@ function Launch() {
           <div className="grid grid-cols-12 page_launch cursor-pointer">
             {launchs.map((launch) => (
               <div className="flex flex-col col-span-4 border rounded-md m-2 p-5 shadow-md transition box_hover bg-white">
-                <NavLink to={`LaunchDetail/${launch.flight_number}`}>
-                  <div>
-                    {/* <img src={launch.link.mission_patch} /> */}
+                <NavLink to={`LaunchDetail/${launch.flight_number}`} className="flex items-center">
+                  <div className="w-2/6 mx-10">
+                    <img src={launch.links.mission_patch_small} />
                   </div>
-                  <div className="flex flex-col">
-                    <span>name : {launch.rocket.rocket_name}</span>
-                    <span>year : {launch.launch_year}</span>
-                    <span>mission : {launch.mission_name}</span>
+                  <div className="flex flex-col text-xl">
+                    <span className="py-2">name : {launch.rocket.rocket_name}</span>
+                    <span className="py-2">year : {launch.launch_year}</span>
+                    <span className="py-2">mission : {launch.mission_name}</span>
                   </div>
                 </NavLink>
               </div>
