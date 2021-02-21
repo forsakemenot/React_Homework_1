@@ -126,11 +126,10 @@ select{
   padding: 0.2vw;
 }
 
-/* menu */
 .menu {
   clear: both;
-  max-height: 0;
   transition: max-height .2s ease-out;
+  width: 16.666667%;
 }
 /* menu icon */
 
@@ -142,6 +141,7 @@ select{
   position: relative;
   left: 15vw;
   user-select: none;
+  z-index: 6;
 }
 
 .menu-icon .navicon {
@@ -149,7 +149,6 @@ select{
   display: block;
   height: 2px;
   position: relative;
-  transition: background .2s ease-out;
   width: 18px;
 }
 
@@ -179,9 +178,24 @@ select{
 }
 
 .menu-btn:checked ~ .menu {
-  max-height: 240px;
+  height: 100vh;
+  top: 0;
+  position: fixed;
+  justify-content: flex-start;
+  align-items: center;
+  padding-top: 6vw;
+  background-color: #cecece;
 }
-
+.menu-btn:checked ~ .menu li {
+  display: flex !important;
+  padding: 1.5vw 0vw;
+  font-size: 2.5vw;
+  
+}
+.menu-btn:checked ~ .menu-icon{
+  top: -2vw;
+  left: 0vw;
+}
 .menu-btn:checked ~ .menu-icon .navicon {
   background: transparent;
 }
@@ -218,7 +232,7 @@ select{
     clear: none;
     float: right;
     max-height: none;
-    flex-direction: column;
+    flex-direction: column !important;
   }
   .menu-icon {
     display: inline-block;

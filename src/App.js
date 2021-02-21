@@ -24,6 +24,7 @@ function App() {
     <Router>
       <div>
         <Nav SpaceX={SpaceX}/>
+        {/* <Navong/> */}
         {/* <div className="fixed w-1/6 h-20 flex justify-center items-center flex-grow ml-10">
           <img src={SpaceX} />
         </div>
