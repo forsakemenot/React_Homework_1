@@ -1,37 +1,104 @@
-.body_launch{
-    background: rgb(255,255,255);
-    background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 88%, rgba(233,233,233,1) 100%);
+.body_launch {
+       background: rgb(255, 255, 255);
+       background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 88%, rgba(233, 233, 233, 1) 100%);
 }
+
 @keyframes blink {
-    0% {
-           opacity: 1   }
-    50% {
-           opacity: 0
-    }
-    100% {
-           opacity: 1   }
+       0% {
+              opacity: 1
+       }
+       50% {
+              opacity: 0
+       }
+       100% {
+              opacity: 1
+       }
 }
+
 @-webkit-keyframes blink {
-    0% {
-           opacity: 1   }
-    50% {
-           opacity: 0
-    }
-    100% {
-           opacity: 1   }
+       0% {
+              opacity: 1
+       }
+       50% {
+              opacity: 0
+       }
+       100% {
+              opacity: 1
+       }
 }
-.blink{
-    -moz-transition:all 0.5s ease-in-out;
-    -webkit-transition:all 0.5s ease-in-out;
-    -o-transition:all 0.5s ease-in-out;
-    -ms-transition:all 0.5s ease-in-out;
-    transition:all 0.5s ease-in-out;
-    -moz-animation:blink normal 1.5s infinite ease-in-out;
-    /* Firefox */
-    -webkit-animation:blink normal 1.5s infinite ease-in-out;
-    /* Webkit */
-    -ms-animation:blink normal 1.5s infinite ease-in-out;
-    /* IE */
-    animation:blink normal 1.5s infinite ease-in-out;
-    /* Opera */
+
+.blink {
+       -moz-transition: all 0.5s ease-in-out;
+       -webkit-transition: all 0.5s ease-in-out;
+       -o-transition: all 0.5s ease-in-out;
+       -ms-transition: all 0.5s ease-in-out;
+       transition: all 0.5s ease-in-out;
+       -moz-animation: blink normal 1.5s infinite ease-in-out;
+       /* Firefox */
+       -webkit-animation: blink normal 1.5s infinite ease-in-out;
+       /* Webkit */
+       -ms-animation: blink normal 1.5s infinite ease-in-out;
+       /* IE */
+       animation: blink normal 1.5s infinite ease-in-out;
+       /* Opera */
+}
+
+@media only screen and (max-width: 1024px) {
+       .detail_content {
+              text-align: center !important;
+       }
+}
+
+@media only screen and (max-width: 640px) {
+       .detail_content {
+              text-align: center !important;
+              flex-direction: column !important;    
+
+       }
+       .detail_text{
+              font-size: 5vw !important;
+              text-align: center !important; 
+              margin: 5px;
+       }
+       .detail_container{
+              flex-direction: column !important;
+       }
+       .body_launch {
+              height: 100%;
+              background: rgb(255, 255, 255);
+              background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 88%, rgba(233, 233, 233, 1) 100%);
+       }
+       .status_bar{
+              width: 100%;
+              height: 100%;
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              align-items: center;
+       }
+       .text_title{
+              justify-content: center !important;
+              align-items: center !important;
+              display: flex;
+       }
+       .back_button_container{
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              width: 100%;
+              
+       }
+       .back_btn{
+              display: flex;
+              width: 50% !important;
+              justify-content: center;
+       }
+
+}
+@media only screen and (max-width: 768px) {
+       .detail_content {
+              text-align: center !important;
+              
+
+       }
 }
