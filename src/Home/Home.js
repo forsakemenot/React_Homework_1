@@ -1,4 +1,5 @@
 import SpaceX from '.././SpaceX-Logo.svg';
+import ElonMusk from '.././ElonMuskSalary.png';
 import React, { useState, useEffect } from 'react';
 import './Home.css';
 import {
@@ -27,6 +28,7 @@ function Home() {
       {rockets.links &&
         <>
           <div id="home_page">
+          <img className="fixed w-full" src={ElonMusk}/>
             <div id="text_left_home_page">
               <p>The name of Founder : {rockets.founder}</p>
               <p>Since : {rockets.founded}</p>

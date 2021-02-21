@@ -38,9 +38,8 @@ select{
   text-align-last:center;
 }
 #home_page{
-  background-image: url(ElonMuskSalary.png);
-  margin-top: -100px;
-  height: 120vh;
+  margin-top: -4vw;
+  height: 120vw;
   width: 100vw;
   z-index: -1;
   position: fixed;
@@ -48,24 +47,23 @@ select{
 #icon_center_page1{
   position: relative;
   height: 3.6vw;
-  top: 15vw;
-  left: 3.5vw;
+  left: 3vw;
 }
 /*- - - - - home page - - - - -*/
 #text_left_home_page{
-  font-size: 1vw;
+  font-size: 1.5vw;
   position: relative;
-  top: 34vw;
-  left: 3.5vw;
+  top: 25vw;
+  left: 3vw;
 }
 #text_right_home_page{
-  font-size: 1.4vw;
+  font-size: 1.8vw;
   position: relative;
-  top: 29vw;
-  left: 72vw;
+  top: 25vw;
+  left: 67vw;
 }
 #text_right_home_page b{
-  font-size: 1.8vw;
+  font-size: 2.8vw;
 }
 
 .box_hover:hover {
@@ -79,11 +77,13 @@ select{
 .filter_box{
   position: fixed;
   top: 4.5vw;
-  z-index: 3;
+  z-index: 6;
   background-color: #f5f5f5;
+  font-size: 0.90vw;
 }
 .bg_filter_box{
   position: fixed;
+  height: 8vw;
   z-index: 3;
   background-color: #f5f5f5;
 }
