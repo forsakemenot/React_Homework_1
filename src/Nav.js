@@ -16,13 +16,13 @@ function Nav({ SpaceX }) {
                 <input class="menu-btn" type="checkbox" id="menu-btn" />
                 <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
                 <ul className="flex flex-row justify-around w-1/6 menu">
-                    <li>
+                    <li className={`${pathname === "/" && "home_active"}`}>
                         <Link to="/">Home</Link>
                     </li>
-                    <li>
+                    <li className={`${pathname === "/Launch" && "launch_active"}`}>
                         <Link to="/Launch">Launchs</Link>
                     </li>
-                    <li>
+                    <li className={`${pathname === "/Rocket" && "rocket_active"}`}>
                         <Link to="/Rocket">Rockets</Link>
                     </li>
 

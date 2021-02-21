@@ -33,7 +33,7 @@ function Home() {
               <p>The name of Founder : {rockets.founder}</p>
               <p>Since : {rockets.founded}</p>
               <p>Website : {rockets.links.website}</p>
-              <div className="w-3/12" style={{marginTop: "0.3vw"}}>
+              <div className="text_summary" style={{marginTop: "0.3vw"}}>
                 <p>{rockets.summary}</p>
               </div>
             </div>
