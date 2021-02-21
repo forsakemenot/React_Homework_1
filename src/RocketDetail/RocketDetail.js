@@ -25,7 +25,7 @@ function RocketDetail() {
         <>
             <>
                 <div className="flex flex-col h-screen container mx-auto items-center justify-center">
-                    <div className="flex flex-col justify-center rocket_detail w-3/6 rounded-md shadow-md bg-white">
+                    <div className="flex flex-col justify-center rocket_detail lg:w-3/6 rounded-md shadow-md bg-white sm:w-full md:w-full">
                         <div className="flex justify-center mb-5 m-5">
                             <img className="rounded-md" src={rockets.flickr_images}></img>
                         </div>

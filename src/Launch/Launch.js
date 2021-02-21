@@ -87,9 +87,9 @@ function Launch() {
                     <img src={launch.links.mission_patch_small} />
                   </div>
                   <div className="flex flex-col text-xl">
-                    <span className="py-2">name : {launch.rocket.rocket_name}</span>
-                    <span className="py-2">year : {launch.launch_year}</span>
-                    <span className="py-2">mission : {launch.mission_name}</span>
+                    <span className="py-2">Rocket Name : {launch.rocket.rocket_name}</span>
+                    <span className="py-2">Year : {launch.launch_year}</span>
+                    <span className="py-2">The Mission : {launch.mission_name}</span>
                   </div>
                 </NavLink>
               </div>

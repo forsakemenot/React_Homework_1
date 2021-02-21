@@ -6,7 +6,7 @@ div .contents{
 .title{
     display: flex;
     position: relative;
-    top: -40vh;
+    top: -10%;
     justify-content: center;
     opacity: 0;
     transition: 1s;
@@ -15,3 +15,55 @@ div .contents{
     opacity: 1;
     transition: 1s;
 }
+/* @media only screen and (max-width: 800px) {
+    .rockets_body {
+      background-color: lightblue !important;
+    }
+  } */
+
+  .rocket_container{
+      top: 5vw;
+      position: relative;
+  }
+  @media only screen and (max-width: 767px) {
+    .title {
+      opacity: 1;
+
+      
+    }
+    .rocketcard{
+        opacity: 0.90;
+    }
+    .title_text{
+        font-size: 1.75rem !important;
+    }
+  }
+  @media only screen and (max-width: 640px) {
+    .title {
+      opacity: 1;
+
+      top: -20%;
+
+    }
+    .rocketcard{
+        opacity: 0.90;
+    }
+    .title_text{
+        color: white;
+        font-size: 1.00rem !important;
+    }
+    
+  }
+  @media only screen and (max-width: 1024px) {
+    .title {
+      opacity: 0.8;
+      background-color: rgb(44, 44, 44);
+
+    }
+    .rocketcard{
+        opacity: 0.90;
+    }
+    .title_text{
+        color: white;
+    }
+  }
