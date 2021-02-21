@@ -21,24 +21,27 @@ function Home() {
   },
     [],
   );
-  const {pathname} = useLocation();
+  const { pathname } = useLocation();
   console.log(pathname);
   return (
     <div className="over_flow_hiden">
       {rockets.links &&
         <>
           <div id="home_page">
-          <img className="fixed w-full" src={ElonMusk}/>
+            <img className="fixed w-full" src={ElonMusk} />
             <div id="text_left_home_page">
               <p>The name of Founder : {rockets.founder}</p>
               <p>Since : {rockets.founded}</p>
               <p>Website : {rockets.links.website}</p>
+              <div className="w-3/12" style={{marginTop: "0.3vw"}}>
+                <p>{rockets.summary}</p>
+              </div>
             </div>
             <div id="text_right_home_page">
-            <p>Company Valuation : <br/><b>{numberWithCommas(rockets.valuation)}</b></p>
-              <p>Total Employees : <br/><b>{numberWithCommas(rockets.employees)}</b></p>
+              <p>Company Valuation : <br /><b>{numberWithCommas(rockets.valuation)}</b></p>
+              <p>Total Employees : <br /><b>{numberWithCommas(rockets.employees)}</b></p>
             </div>
-            <img id="icon_center_page1"src={SpaceX} />
+            <img id="icon_center_page1" src={SpaceX} />
           </div>
         </>
       }
@@ -47,7 +50,7 @@ function Home() {
   );
   function numberWithCommas(x) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-}
+  }
 }
 
 export default Home;

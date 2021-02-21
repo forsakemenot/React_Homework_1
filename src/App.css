@@ -47,11 +47,12 @@ select{
 #icon_center_page1{
   position: relative;
   height: 3.6vw;
+  top: -6vw;
   left: 3vw;
 }
 /*- - - - - home page - - - - -*/
 #text_left_home_page{
-  font-size: 1.5vw;
+  font-size: 1.1vw;
   position: relative;
   top: 25vw;
   left: 3vw;
@@ -59,7 +60,7 @@ select{
 #text_right_home_page{
   font-size: 1.8vw;
   position: relative;
-  top: 25vw;
+  top: 19vw;
   left: 67vw;
 }
 #text_right_home_page b{
@@ -79,7 +80,7 @@ select{
   top: 4.5vw;
   z-index: 6;
   background-color: #f5f5f5;
-  font-size: 0.90vw;
+  font-size: 0.9vw;
 }
 .bg_filter_box{
   position: fixed;
@@ -97,11 +98,121 @@ select{
 .logo_hidden{
   display: none;
 }
+.text_in_card{
+  font-size: 1vw;
+  padding-top: 0.5vw;
+  padding-bottom: 0.5vw;
+}
+.mar-x-1{
+  margin-left:1vw;
+  margin-right:1vw;
+}
+.pa-2{
+  padding: 0.2vw;
+}
+
+/* menu */
+.menu {
+  clear: both;
+  max-height: 0;
+  transition: max-height .2s ease-out;
+}
+/* menu icon */
+
+.menu-icon {
+  cursor: pointer;
+  display: inline-block;
+  float: right;
+  padding: 28px 20px;
+  position: relative;
+  left: 15vw;
+  user-select: none;
+}
+
+.menu-icon .navicon {
+  background: #333;
+  display: block;
+  height: 2px;
+  position: relative;
+  transition: background .2s ease-out;
+  width: 18px;
+}
+
+.menu-icon .navicon:before,
+.menu-icon .navicon:after {
+  background: #333;
+  content: '';
+  display: block;
+  height: 100%;
+  position: absolute;
+  transition: all .2s ease-out;
+  width: 100%;
+}
+
+.menu-icon .navicon:before {
+  top: 5px;
+}
+
+.menu-icon .navicon:after {
+  top: -5px;
+}
+
+/* menu btn */
+
+.menu-btn {
+  display: none;
+}
+
+.menu-btn:checked ~ .menu {
+  max-height: 240px;
+}
+
+.menu-btn:checked ~ .menu-icon .navicon {
+  background: transparent;
+}
+
+.menu-btn:checked ~ .menu-icon .navicon:before {
+  transform: rotate(-45deg);
+}
+
+.menu-btn:checked ~ .menu-icon .navicon:after {
+  transform: rotate(45deg);
+}
+
+.menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+.menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+  top: 0;
+}
+@media (min-width: 48em) {
+  li {
+    float: left;
+  }
+  .menu {
+    clear: none;
+    float: right;
+    max-height: none;
+    flex-direction: column;
+  }
+  .menu-icon {
+    display: none;
+  }
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
   }
   to {
     transform: rotate(360deg);
+  }
+}
+@media only screen and (max-width: 767px) {
+  .text_in_card {
+    font-size: 2.5vw;
+  }
+  li {
+    display: none;
+  }
+  .filter_box span{
+    display: none;
   }
 }

@@ -46,16 +46,16 @@ function Launch() {
           {/* จัดตำแหน่ง */}
           <div className="bg_filter_box w-full"></div>
           <div className="filter_box flex w-4/12 justify-around items-center">
-            
+
             <span>NAME : </span>
-            <select className="border shadow-md p-2 rounded-md" onChange={handleChangeName} value={name}>
+            <select className="border shadow-md pa-2 rounded-md" onChange={handleChangeName} value={name}>
               <option value="">All</option>
               <option value="Falcon 1">Falcon 1</option>
               <option value="Falcon 9">Falcon 9</option>
               <option value="Falcon Heavy">Falcon Heavy</option>
             </select>
             <span>YEAR : </span>
-            <select className="border shadow-md p-2 rounded-md" onChange={handleChangeYear} value={year}>
+            <select className="border shadow-md pa-2 rounded-md" onChange={handleChangeYear} value={year}>
               <option value="">All</option>
               <option value="2006">2006</option>
               <option value="2007">2007</option>
@@ -73,23 +73,23 @@ function Launch() {
               <option value="2020">2020</option>
             </select>
             <span>MISSION : </span>
-            <select className="border shadow-md p-2 rounded-md" onChange={handleChangeSuccess} value={success}>
+            <select className="border shadow-md pa-2 rounded-md" onChange={handleChangeSuccess} value={success}>
               <option value="">All</option>
               <option value="true">sucess</option>
               <option value="false">no-sucess</option>
             </select>
           </div>
-          <div className="grid grid-cols-12 page_launch cursor-pointer">
+          <div className="grid  page_launch cursor-pointer md:grid-cols-12 sm:grid-cols-3">
             {launchs.map((launch) => (
-              <div className="flex flex-col col-span-4 border rounded-md m-2 p-5 shadow-md transition box_hover bg-white">
+              <div className="flex flex-col col-span-4 border rounded-md shadow-md transition box_hover bg-white md:m-2 md:p-5 sm:m-1 sm:p-2">
                 <NavLink to={`LaunchDetail/${launch.flight_number}`} className="flex items-center">
-                  <div className="w-2/6 mx-10">
+                  <div className="w-2/6 mar-x-1">
                     <img src={launch.links.mission_patch_small} />
                   </div>
                   <div className="flex flex-col text-xl">
-                    <span className="py-2">Rocket Name : {launch.rocket.rocket_name}</span>
-                    <span className="py-2">Year : {launch.launch_year}</span>
-                    <span className="py-2">The Mission : {launch.mission_name}</span>
+                    <span className="text_in_card">name : {launch.rocket.rocket_name}</span>
+                    <span className="text_in_card">year : {launch.launch_year}</span>
+                    <span className="text_in_card">mission : {launch.mission_name}</span>
                   </div>
                 </NavLink>
               </div>
