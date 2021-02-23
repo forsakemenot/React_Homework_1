@@ -39,10 +39,11 @@ select{
 }
 #home_page{
   margin-top: -4vw;
-  height: 120vw;
+  height: 100%;
   width: 100vw;
   z-index: -1;
   position: fixed;
+  background: #131313;
 }
 #icon_center_page1{
   position: relative;
@@ -96,16 +97,13 @@ select{
   z-index: 4;
 }
 .home_active{
-  text-decoration: underline;
-  text-decoration-color: #ffc107;
+    border-bottom: 2px solid #F2A725;
 }
 .launch_active{
-  text-decoration: underline;
-  text-decoration-color: #ffc107;
+    border-bottom: 2px solid #F2A725;
 }
 .rocket_active{
-  text-decoration: underline;
-  text-decoration-color: #ffc107;
+    border-bottom: 2px solid #F2A725;
 }
 .logo_spaceX{
   z-index: 5;
@@ -179,12 +177,13 @@ select{
 
 .menu-btn:checked ~ .menu {
   height: 100vh;
+  width: 25vw;
   top: 0;
   position: fixed;
   justify-content: flex-start;
   align-items: center;
   padding-top: 6vw;
-  background-color: #cecece;
+  background-color: #fff;
 }
 .menu-btn:checked ~ .menu li {
   display: flex !important;
@@ -220,13 +219,11 @@ select{
     transform: rotate(360deg);
   }
 }
-@media only screen and (max-width: 768px) {
-  .text_in_card {
-    font-size: 2.2vw;
-  }
+@media only screen and (max-width: 1000px) {
   li {
     display: none;
     float: left;
+    margin-right: 1vw;
   }
   .menu {
     clear: none;
@@ -240,6 +237,12 @@ select{
   .filter_box span{
     display: none;
   }
+}
+@media only screen and (max-width: 900px) {
+  .text_in_card {
+    font-size: 2.2vw;
+  }
+  
   #icon_center_page1{
     top: 8vw;
     left: 3vw;
@@ -249,6 +252,7 @@ select{
     position: fixed;
     top: 75vw;
     left: 3vw;
+    color: #fff;
 
   }
   #text_right_home_page{
@@ -265,5 +269,26 @@ select{
    width: 90%;
    border-top: 0.1vw solid #b6b6b6;
    padding-top: 0.4vw;
+   color: #fff;
+  }
+}
+@media only screen and (max-width: 639px) {
+  .box_space{
+    margin-top: 1.5vw;
+  }
+  .page_launch {
+    top: 22vw;
+  }
+  .filter_box{
+    top: 15vw;
+  }
+}
+@media only screen and (max-width: 550px) {
+  .menu-btn:checked ~ .menu-icon{
+    top: -5vw;
+    left: 2.5vw;
+  }
+  .menu-btn:checked ~ .menu-icon .navicon {
+    width: 3vw;
   }
 }

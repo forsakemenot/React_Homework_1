@@ -12,7 +12,7 @@ function Nav({ SpaceX }) {
     return (
         <div>
 
-            <div className={`fixed w-full h-20 flex justify-end items-center ${pathname === "/Launch" && "nav_show"}`}>
+            <div className={`fixed w-full h-20 flex justify-end items-center ${pathname === "/Launch" && "nav_show"} ${pathname === "/Rocket" && "nav_show"}`}>
                 <input class="menu-btn" type="checkbox" id="menu-btn" />
                 <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
                 <ul className="flex flex-row justify-around menu">

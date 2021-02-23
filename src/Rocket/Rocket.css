@@ -25,17 +25,32 @@ div .contents{
       top: 5vw;
       position: relative;
   }
+  @media only screen and (max-width: 1024px) {
+    .title {
+      opacity: 0.8;
+      background-color: rgb(44, 44, 44);
+
+    }
+    .rocketcard{
+        opacity: 0.90;
+    }
+    .title_text{
+        color: white;
+    }
+  }
   @media only screen and (max-width: 767px) {
     .title {
-      opacity: 1;
-
-      
+      opacity: 1;   
     }
     .rocketcard{
         opacity: 0.90;
     }
     .title_text{
         font-size: 1.75rem !important;
+    }
+    .rocket_body{
+      position: relative;
+      top: 15vw;
     }
   }
   @media only screen and (max-width: 640px) {
@@ -53,17 +68,4 @@ div .contents{
         font-size: 1.00rem !important;
     }
     
-  }
-  @media only screen and (max-width: 1024px) {
-    .title {
-      opacity: 0.8;
-      background-color: rgb(44, 44, 44);
-
-    }
-    .rocketcard{
-        opacity: 0.90;
-    }
-    .title_text{
-        color: white;
-    }
   }

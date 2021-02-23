@@ -24,7 +24,7 @@ function Home() {
   const { pathname } = useLocation();
   console.log(pathname);
   return (
-    <div className="over_flow_hiden">
+    <div className="over_flow_hiden bg-gray-400">
       {rockets.links &&
         <>
           <div id="home_page">
@@ -33,7 +33,7 @@ function Home() {
               <p>The name of Founder : {rockets.founder}</p>
               <p>Since : {rockets.founded}</p>
               <p>Website : {rockets.links.website}</p>
-              <div className="text_summary" style={{marginTop: "0.3vw"}}>
+              <div className="text_summary">
                 <p>{rockets.summary}</p>
               </div>
             </div>

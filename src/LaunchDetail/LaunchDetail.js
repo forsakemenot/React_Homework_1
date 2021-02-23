@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from "react-router-dom";
 import { useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 import './LaunchDetail.css'
 
 
@@ -37,9 +38,11 @@ function LaunchDetail() {
                                     </div>
                                     <div className="flex w-full status_bar">
                                         <div className="bg-blue-500 w-52 rounded-md justify-center flex mb-2">
+                                        <Link to={`/RocketDetail/${launchs.rocket.rocket_id}`}>
                                             <p className="uppercase text-white">
                                                 Rocket Name : {launchs.rocket.rocket_id}
                                             </p>
+                                        </Link>
                                         </div>
                                         {launchs.details
                                             ? <div className="lg:ml-5 md:ml-5 bg-green-500 w-52 rounded-md justify-center flex mb-2"><p className="uppercase text-white">LAUNCH : SUCCESS</p></div>

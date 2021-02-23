@@ -79,9 +79,9 @@ function Launch() {
               <option value="false">no-sucess</option>
             </select>
           </div>
-          <div className="grid  page_launch cursor-pointer md:grid-cols-12 sm:grid-cols-3">
+          <div className="grid  page_launch cursor-pointer sm:grid-cols-3 md:grid-cols-12 ">
             {launchs.map((launch) => (
-              <div className="flex flex-col col-span-4 border rounded-md shadow-md transition box_hover bg-white md:m-2 md:p-5 sm:m-1 sm:p-2">
+              <div className="flex flex-col col-span-4 border rounded-md shadow-md transition box_hover bg-white md:m-2 md:p-5 sm:m-1 sm:p-2 box_space">
                 <NavLink to={`LaunchDetail/${launch.flight_number}`} className="flex items-center">
                   <div className="w-2/6 mar-x-1">
                     <img src={launch.links.mission_patch_small} />
